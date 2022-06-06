@@ -1,0 +1,14 @@
+from abc import abstractmethod
+from src.integration.gov.deputado_federal_integration import DeputadoFederalIntegration
+from src.repository.adapters.postgres.view_deputado_log_repository import ViewDeputadoLogRepository
+from src.repository.adapters.postgres.view_parlamentar_repository import ViewParlamentarRepository
+
+
+class SelectCaptureDataDeputadoInterface:
+  view_parlamentar_repository:ViewParlamentarRepository
+  view_deputado_log_repository:ViewDeputadoLogRepository
+  deputado_federal_integration: DeputadoFederalIntegration
+
+
+  
+  
