@@ -11,7 +11,7 @@ from src.types.sigarp_save_data_cidadania_queue_dto import SigarpSaveDataCidadan
 
 from ..config.envs import Envs
 from ..config.constants import Constants
-from ..domain.base.base_service import BaseService
+from .base.base_service import BaseService
 from ..types.sigarp_capture_data_cidadania_scrapping_queue_dto import SigarpCaptureDataCidadaniaScrappingQueueDTO
 from ..types.return_service import ReturnService
 import xlrd
@@ -28,7 +28,7 @@ import pickle
 import time
 import os
 
-class CaptureDataCidadaniaScrappingService(BaseService):
+class ExampleService(BaseService):
     s3: S3
     sqs: Sqs
     selenium:Selenium = None

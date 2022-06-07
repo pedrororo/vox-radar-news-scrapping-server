@@ -7,7 +7,7 @@ from flask_cors import CORS
 from logzero import logger
 
 from src.types.return_service import ReturnService
-from ..domain.capture_data_cidadania_scrapping_service import CaptureDataCidadaniaScrappingService
+from ..domain.example import ExampleService
 
 class RouteApp():
     
@@ -27,12 +27,12 @@ class RouteApp():
             logger.info("/health")
             return "I'm ok"
 
-        @app.route("/sigarp-capture-data-cidadania-scrapping", methods=['POST'])
-        def sigarpCaptureDataCidadaniaScrapping():
-            logger.info("/sigarp-capture-data-cidadania-scrapping")
+        @app.route("/example", methods=['POST'])
+        def example():
+            logger.info("/example")
             logger.info(request.get_json())
 
-            CaptureDataCidadaniaScrappingService().exec(json.dumps(request.get_json()))
+            ExampleService().exec(json.dumps(request.get_json()))
             return "I'm ok"
 
         return app

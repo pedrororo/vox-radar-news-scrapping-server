@@ -2,8 +2,6 @@
 import boto3
 from src.domain.base.base_service import BaseService
 
-from src.integration.sqs.my_listener_queue import MyListenerQueue
-from src.integration.sqs.queue_processors import QueueProcessors
 from src.types.return_service import ReturnService
 from ...config.envs import Envs
 from typing import List

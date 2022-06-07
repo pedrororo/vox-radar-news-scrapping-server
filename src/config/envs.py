@@ -10,15 +10,7 @@ load_dotenv()
 file = open('src/config/queues.json')
 data = json.load(file)
 
-sigarp_saude_scrapping = data['SIGARP_SAUDE_SCRAPPING'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
 sigarp_cidadania_scrapping = data['SIGARP_CIDADANIA_SCRAPPING'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
-sigarp_educacao_scrapping = data['SIGARP_EDUCACAO_SCRAPPING'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
-sigarp_economia_scrapping = data['SIGARP_ECONOMIA_SCRAPPING'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
-
-sigarp_save_data_saude = data['SIGARP_SAVE_DATA_SAUDE'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
-sigarp_save_data_cidadania = data['SIGARP_SAVE_DATA_CIDADANIA'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
-sigarp_save_data_educacao = data['SIGARP_SAVE_DATA_EDUCACAO'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
-sigarp_save_data_economia = data['SIGARP_SAVE_DATA_ECONOMIA'] + Utils.get_queue_suffix_by_environment(os.environ.get('ENVIRONMENT'))
 
 file.close()
 
@@ -52,14 +44,7 @@ class Envs:
       "REGION": os.environ.get('AWS_SQS_REGION'),
       "URL": os.environ.get('AWS_SQS_URL'),
       "QUEUE": {
-        "SIGARP_SAUDE_SCRAPPING": sigarp_saude_scrapping,
-        "SIGARP_CIDADANIA_SCRAPPING": sigarp_cidadania_scrapping,
-        "SIGARP_EDUCACAO_SCRAPPING": sigarp_educacao_scrapping,
-        "SIGARP_ECONOMIA_SCRAPPING": sigarp_economia_scrapping,
-        "SIGARP_SAVE_DATA_SAUDE": sigarp_save_data_saude,
-        "SIGARP_SAVE_DATA_CIDADANIA": sigarp_save_data_cidadania,
-        "SIGARP_SAVE_DATA_EDUCACAO": sigarp_save_data_educacao,
-        "SIGARP_SAVE_DATA_ECONOMIA": sigarp_save_data_economia
+        "SIGARP_CIDADANIA_SCRAPPING": sigarp_cidadania_scrapping
       }
     },
     "S3": {
